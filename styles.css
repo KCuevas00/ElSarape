@@ -569,6 +569,69 @@ p {
   margin: 0 auto;
 }
 
+/* About Us Section */
+.about-section {
+  padding: var(--spacing-section-mobile) 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-logo-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.about-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.about-text {
+  text-align: center;
+}
+
+.about-text h2 {
+  margin-bottom: 1rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+  color: var(--color-text-light);
+}
+
+@media (min-width: 768px) {
+  .about-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+  .about-text {
+    text-align: left;
+  }
+  .about-logo-img {
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+  }
+  .about-section {
+    padding: var(--spacing-section-desktop) 2rem;
+  }
+}
+
 /* Contact/Map Section */
 .contact-section {
   padding: var(--spacing-section-mobile) 1.5rem;
@@ -576,31 +639,29 @@ p {
 }
 
 .contact-section-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
 .contact-section-content h2 {
-  margin-bottom: 1.5rem;
-}
-
-.contact-details {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .contact-info-item p {
   margin-bottom: 0.5rem;
   color: var(--color-text-light);
+  font-size: 1rem;
 }
 
-.contact-info-item a {
-  color: var(--color-accent);
-  text-decoration: none;
-}
-
-.contact-info-item a:hover {
-  text-decoration: underline;
+@media (min-width: 768px) {
+  .contact-section-content {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
 }
 
 .contact-map {
@@ -786,6 +847,24 @@ p {
   justify-content: center;
   gap: 0.75rem;
   margin-bottom: 2rem;
+}
+
+.section-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-light);
+  margin-bottom: 0.25rem;
+}
+
+.section-header {
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  margin-bottom: 0;
 }
 
 .section-icon {

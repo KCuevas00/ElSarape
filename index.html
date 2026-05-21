@@ -9,20 +9,23 @@
 <body>
   <!-- Header -->
   <header class="header">
-    <a href="index.html" class="header-brand">
-      <img src="photos/logo.jpg" alt="El Sarape Logo" class="header-logo">
-      <span class="header-brand-text">El Sarape</span>
-    </a>
-    <nav class="header-nav">
-      <div class="header-nav-links">
+    <div class="header-left">
+      <a href="index.html" class="header-brand">
+        <img src="photos/logo.jpg" alt="El Sarape Logo" class="header-logo">
+        <span class="header-brand-text">El Sarape</span>
+      </a>
+    </div>
+    <div class="header-center">
+      <nav class="header-nav-links">
         <a href="our-story.html">Our Story</a>
         <a href="location.html">Location</a>
         <a href="contact.html">Contact</a>
-      </div>
-      <div class="header-nav-menu">
-        <a href="menu.html" class="btn-primary">Menu</a>
-      </div>
-    </nav>
+      </nav>
+    </div>
+    <div class="header-right">
+      <span class="header-phone">(309) 314-2894</span>
+      <a href="menu.html" class="header-cta">Menu</a>
+    </div>
     <button class="hamburger" aria-label="Open menu">
       <span></span>
       <span></span>
@@ -77,17 +80,51 @@
         <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=400&h=300&fit=crop" alt="Fresh Mexican food" class="large">
         <img src="https://images.unsplash.com/photo-1626804475297-411dbe6172d6?w=400&h=300&fit=crop" alt="Homemade tacos">
         <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=300&fit=crop" alt="Family dining">
+        <img src="photos/logo.jpg" alt="El Sarape Logo" class="hero-integrated-logo">
       </div>
     </div>
   </section>
 
   <!-- Featured Menu Preview -->
   <section class="menu-preview">
-    <h2>Menu Highlights</h2>
+    <div class="section-header">
+      <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+      </svg>
+      <h2>Menu Highlights</h2>
+    </div>
+    <div class="menu-category">
+      <h3>Starters</h3>
+      <div class="menu-items">
+        <div class="menu-item featured">
+          <div class="menu-item-thumbnail">
+            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=120&h=120&fit=crop" alt="Queso Fundido">
+          </div>
+          <div class="menu-item-name">
+            <h4>Queso Fundido <span class="featured-badge">⭐</span></h4>
+            <p>Melted cheese with chorizo, served with tortillas</p>
+          </div>
+          <span class="menu-item-price">$10.95</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-thumbnail">
+            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=120&h=120&fit=crop" alt="Cheese Dip">
+          </div>
+          <div class="menu-item-name">
+            <h4>Cheese Dip</h4>
+            <p>Creamy cheese dip, served with tortilla chips</p>
+          </div>
+          <span class="menu-item-price">$8.95</span>
+        </div>
+      </div>
+    </div>
     <div class="menu-category">
       <h3>Tacos</h3>
       <div class="menu-items">
         <div class="menu-item">
+          <div class="menu-item-thumbnail">
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=120&h=120&fit=crop" alt="Al Pastor">
+          </div>
           <div class="menu-item-name">
             <h4>Al Pastor</h4>
             <p>Marinated pork, pineapple, cilantro</p>
@@ -95,6 +132,9 @@
           <span class="menu-item-price">$3.25</span>
         </div>
         <div class="menu-item">
+          <div class="menu-item-thumbnail">
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=120&h=120&fit=crop" alt="Steak">
+          </div>
           <div class="menu-item-name">
             <h4>Steak</h4>
             <p>Grilled steak, onions, cilantro</p>
@@ -102,6 +142,9 @@
           <span class="menu-item-price">$3.50</span>
         </div>
         <div class="menu-item">
+          <div class="menu-item-thumbnail">
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=120&h=120&fit=crop" alt="Shrimp">
+          </div>
           <div class="menu-item-name">
             <h4>Shrimp</h4>
             <p>Fresh shrimp, cabbage, lime</p>
@@ -114,6 +157,9 @@
       <h3>Quesadillas</h3>
       <div class="menu-items">
         <div class="menu-item">
+          <div class="menu-item-thumbnail">
+            <img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=120&h=120&fit=crop" alt="Al Pastor">
+          </div>
           <div class="menu-item-name">
             <h4>Al Pastor</h4>
             <p>Marinated pork, cheese, tortilla</p>
@@ -121,6 +167,9 @@
           <span class="menu-item-price">$5.25</span>
         </div>
         <div class="menu-item">
+          <div class="menu-item-thumbnail">
+            <img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=120&h=120&fit=crop" alt="Chicken">
+          </div>
           <div class="menu-item-name">
             <h4>Chicken</h4>
             <p>Grilled chicken, cheese, tortilla</p>
@@ -133,6 +182,9 @@
       <h3>Burritos</h3>
       <div class="menu-items">
         <div class="menu-item">
+          <div class="menu-item-thumbnail">
+            <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=120&h=120&fit=crop" alt="Burrito">
+          </div>
           <div class="menu-item-name">
             <h4>Burrito</h4>
             <p>Rice, beans, cheese, salsa, lettuce, pico, guacamole</p>
@@ -164,7 +216,16 @@
           <p><strong>Hours:</strong> Open Daily 11AM – 9PM</p>
         </div>
         <div class="location-preview-map">
-          <img src="https://maps.googleapis.com/maps/api/staticmap?center=917+Silvis+IL+61282&zoom=14&size=400x200&maptype=roadmap&markers=color:red%7C917+Silvis+IL+61282&key=YOUR_API_KEY" alt="Map preview of 917 Silvis, IL 61282" onerror="this.style.display='none'; this.parentElement.innerHTML='<p style=\'color: #999;\'>Map preview unavailable</p>'">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.123456789!2d-90.123456!3d41.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM0DCsDAnMS4yTiA5MMKwMDcnNDMuN0Ui!5e0!3m2!1sen!2sus!4v1234567890" 
+            width="100%" 
+            height="200" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="El Sarape Location">
+          </iframe>
         </div>
       </div>
     </div>

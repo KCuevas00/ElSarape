@@ -9,20 +9,23 @@
 <body>
   <!-- Header -->
   <header class="header">
-    <a href="index.html" class="header-brand">
-      <img src="photos/logo.jpg" alt="El Sarape Logo" class="header-logo">
-      <span class="header-brand-text">El Sarape</span>
-    </a>
-    <nav class="header-nav">
-      <div class="header-nav-links">
-        <a href="our-story.html">Our Story</a>
+    <div class="header-left">
+      <a href="index.html" class="header-brand">
+        <img src="photos/logo.jpg" alt="El Sarape Logo" class="header-logo">
+        <span class="header-brand-text">El Sarape</span>
+      </a>
+    </div>
+    <div class="header-center">
+      <nav class="header-nav-links">
+        <a href="our-story.html" class="active">Our Story</a>
         <a href="location.html">Location</a>
         <a href="contact.html">Contact</a>
-      </div>
-      <div class="header-nav-menu">
-        <a href="menu.html" class="btn-primary">Menu</a>
-      </div>
-    </nav>
+      </nav>
+    </div>
+    <div class="header-right">
+      <span class="header-phone">(309) 314-2894</span>
+      <a href="menu.html" class="header-cta">Menu</a>
+    </div>
     <button class="hamburger" aria-label="Open menu">
       <span></span>
       <span></span>
@@ -35,7 +38,7 @@
     <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
     <div class="mobile-nav-links">
       <a href="index.html">Home</a>
-      <a href="our-story.html">Our Story</a>
+      <a href="our-story.html" class="active">Our Story</a>
       <a href="location.html">Location</a>
       <a href="contact.html">Contact</a>
       <a href="menu.html" class="btn-primary">Menu</a>
@@ -50,9 +53,16 @@
 
   <!-- Content Block -->
   <div class="content-block">
-    <p>El Sarape was founded with a simple goal: to bring authentic Mexican flavors to our community. Our recipes have been passed down through generations, preserving the traditional cooking methods and ingredients that make Mexican cuisine so special.</p>
-    <p>We source fresh ingredients whenever possible and prepare each dish with care. From our handmade tortillas to our slow-cooked meats, everything is made in-house to ensure the highest quality.</p>
-    <p>Our restaurant is named after the traditional Mexican garment, the sarape, which represents the vibrant colors and rich culture of Mexico. We hope our food brings a piece of that tradition to your table.</p>
+    <div class="story-content">
+      <div class="story-text">
+        <p>El Sarape was founded with a simple goal: to bring authentic Mexican flavors to our community. Our recipes have been passed down through generations, preserving the traditional cooking methods and ingredients that make Mexican cuisine so special.</p>
+        <p>We source fresh ingredients whenever possible and prepare each dish with care. From our handmade tortillas to our slow-cooked meats, everything is made in-house to ensure the highest quality.</p>
+        <p>Our restaurant is named after the traditional Mexican garment, the sarape, which represents the vibrant colors and rich culture of Mexico. We hope our food brings a piece of that tradition to your table.</p>
+      </div>
+      <div class="story-image">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=400&fit=crop" alt="Family dining at El Sarape">
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->

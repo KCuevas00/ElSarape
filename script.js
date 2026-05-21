@@ -51,3 +51,9 @@ if (mobileNav) {
     }
   });
 }
+
+// Dynamic copyright year
+const footerYear = document.querySelector('.footer-bottom p');
+if (footerYear) {
+  footerYear.innerHTML = `&copy; ${new Date().getFullYear()} El Sarape. All rights reserved.`;
+}

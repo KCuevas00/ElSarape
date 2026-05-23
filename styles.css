@@ -17,7 +17,7 @@
   --color-green-muted: #7CB342;
   
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
   
   --spacing-section-mobile: 3rem;
   --spacing-section-desktop: 5rem;
@@ -58,7 +58,7 @@ body {
 }
 
 /* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Serif+Display:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
 
 /* Typography */
 h1 {
@@ -309,7 +309,7 @@ p {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-text);
-  font-family: var(--font-heading);
+  font-family: "Rye", serif;
   transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
   position: relative;
 }
@@ -620,10 +620,9 @@ p {
 }
 
 .about-logo-img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
+  width: 150px;
+  height: auto;
+  object-fit: contain;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
@@ -642,6 +641,7 @@ p {
 
 .about-text h2 {
   margin-bottom: 1rem;
+  font-family: "Rye", serif;
 }
 
 .about-text p:last-child {
@@ -672,6 +672,21 @@ p {
 .contact-section {
   padding: var(--spacing-section-mobile) 1.5rem;
   background-color: var(--color-accent-soft);
+  position: relative;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.55;
+  z-index: 0;
 }
 
 .contact-section-content {
@@ -680,10 +695,13 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-info-block h2 {
   margin-bottom: 1rem;
+  font-family: "Rye", serif;
 }
 
 .contact-info-list {
@@ -848,6 +866,7 @@ p {
   max-width: 70vw;
   height: auto;
   filter: drop-shadow(0 4px 24px rgba(0,0,0,0.5));
+  z-index: 10;
 }
 
 .hero-tagline {
@@ -874,7 +893,7 @@ p {
 .hero-info-section {
   padding: 1rem 1.5rem;
   background-color: var(--color-bg);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: none;
 }
 
 .hero-info-content {
@@ -906,6 +925,7 @@ p {
   font-size: 1.125rem;
   color: var(--color-text);
   font-weight: 500;
+  font-family: var(--font-heading);
 }
 
 .hero-info-item svg {
@@ -970,8 +990,30 @@ p {
 /* Featured Menu Preview */
 .menu-preview {
   padding: var(--spacing-section-mobile) 1.5rem;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 0;
+}
+
+.menu-preview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('Photos/papelpicado.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.55;
+  z-index: -1;
 }
 
 .section-header {

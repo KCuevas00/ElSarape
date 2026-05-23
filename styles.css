@@ -583,14 +583,14 @@ p {
 
 .about-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .about-logo-img {
-  width: 150px;
-  height: auto;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
@@ -605,7 +605,8 @@ p {
 }
 
 .about-text {
-  text-align: center;
+  text-align: left;
+  flex: 1;
 }
 
 .about-text h2 {

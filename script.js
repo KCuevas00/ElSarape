@@ -63,13 +63,11 @@ const slides = document.querySelectorAll('.hero-slide');
 let currentSlide = 0;
 
 if (slides.length > 0) {
-  // Start slideshow after initial delay to allow first slide to be visible
-  setTimeout(() => {
-    setInterval(() => {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }, 4000);
+  // Start slideshow immediately with smooth transitions
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
   }, 4000);
 }
 

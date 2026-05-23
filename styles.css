@@ -234,7 +234,7 @@ p {
   gap: 0.5rem;
   font-size: 0.95rem;
   color: var(--color-accent);
-  font-family: var(--font-main);
+  font-family: "Rye", serif;
   font-weight: 600;
   text-decoration: none;
   padding: 0.6rem 1.25rem;
@@ -936,6 +936,12 @@ p {
   font-family: "Rye", serif;
 }
 
+@media (max-width: 767px) {
+  .hero-info-item {
+    font-size: 0.9rem;
+  }
+}
+
 .hero-info-item svg {
   width: 24px;
   height: 24px;
@@ -1433,6 +1439,77 @@ p {
   padding-top: 2rem;
   margin-top: 2rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-card);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: var(--color-accent);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
+}
+
+.lightbox-nav:hover {
+  color: var(--color-accent);
 }
 
 /* Desktop Styles */

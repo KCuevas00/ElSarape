@@ -72,3 +72,95 @@ if (slides.length > 0) {
     }, 4000);
   }, 4000);
 }
+
+// Lightbox functionality for menu images
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+const lightboxClose = document.querySelector('.lightbox-close');
+const lightboxPrev = document.querySelector('.lightbox-prev');
+const lightboxNext = document.querySelector('.lightbox-next');
+let currentImageIndex = 0;
+let menuImages = [];
+
+if (lightbox && lightboxImage) {
+  // Get all menu card images
+  menuImages = Array.from(document.querySelectorAll('.menu-card img'));
+  
+  // Open lightbox when clicking a menu card image
+  menuImages.forEach((img, index) => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () => {
+      currentImageIndex = index;
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  // Close lightbox
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    lightboxImage.src = '';
+  }
+  
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+  
+  // Close when clicking outside the image
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+  
+  // Close with ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      closeLightbox();
+    }
+  });
+  
+  // Navigate to previous image
+  function showPrevImage() {
+    currentImageIndex = (currentImageIndex - 1 + menuImages.length) % menuImages.length;
+    const prevImg = menuImages[currentImageIndex];
+    lightboxImage.src = prevImg.src;
+    lightboxImage.alt = prevImg.alt;
+  }
+  
+  // Navigate to next image
+  function showNextImage() {
+    currentImageIndex = (currentImageIndex + 1) % menuImages.length;
+    const nextImg = menuImages[currentImageIndex];
+    lightboxImage.src = nextImg.src;
+    lightboxImage.alt = nextImg.alt;
+  }
+  
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showPrevImage();
+    });
+  }
+  
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showNextImage();
+    });
+  }
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    
+    if (e.key === 'ArrowLeft') {
+      showPrevImage();
+    } else if (e.key === 'ArrowRight') {
+      showNextImage();
+    }
+  });
+}

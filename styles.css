@@ -760,6 +760,16 @@ p {
 .contact-info-block h2 {
   margin-bottom: 1rem;
   font-family: "Rye", serif;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-accent);
 }
 
 .contact-info-list {
@@ -771,6 +781,8 @@ p {
   gap: 0.5rem;
   color: var(--color-text-light);
   font-size: 1rem;
+  font-family: "Rye", serif;
+  text-align: center;
 }
 
 .contact-info-list a {

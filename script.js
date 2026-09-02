@@ -81,33 +81,39 @@ let currentImageIndex = 0;
 let menuImages = [];
 
 if (lightbox && lightboxImage) {
-  // Get all menu card images
+  // Get all menu card images and cards
   menuImages = Array.from(document.querySelectorAll('.menu-card img'));
+  const menuCards = Array.from(document.querySelectorAll('.menu-card'));
   
-  // Open lightbox when clicking a menu card image
-  menuImages.forEach((img, index) => {
-    img.style.cursor = 'pointer';
-    img.addEventListener('click', () => {
-      currentImageIndex = index;
-      lightboxImage.src = img.src;
-      lightboxImage.alt = img.alt;
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
+  // Open lightbox when clicking anywhere on a menu card
+  menuCards.forEach((card, index) => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+      const img = card.querySelector('img');
+      if (img) {
+        currentImageIndex = index;
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt || 'Dish Preview';
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
     });
   });
   
-  // Close lightbox
+  // Close lightbox function
   function closeLightbox() {
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
-    lightboxImage.src = '';
   }
   
   if (lightboxClose) {
-    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
   }
   
-  // Close when clicking outside the image
+  // Close when clicking outside the image (on backdrop)
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       closeLightbox();
@@ -123,18 +129,20 @@ if (lightbox && lightboxImage) {
   
   // Navigate to previous image
   function showPrevImage() {
+    if (menuImages.length === 0) return;
     currentImageIndex = (currentImageIndex - 1 + menuImages.length) % menuImages.length;
     const prevImg = menuImages[currentImageIndex];
     lightboxImage.src = prevImg.src;
-    lightboxImage.alt = prevImg.alt;
+    lightboxImage.alt = prevImg.alt || 'Dish Preview';
   }
   
   // Navigate to next image
   function showNextImage() {
+    if (menuImages.length === 0) return;
     currentImageIndex = (currentImageIndex + 1) % menuImages.length;
     const nextImg = menuImages[currentImageIndex];
     lightboxImage.src = nextImg.src;
-    lightboxImage.alt = nextImg.alt;
+    lightboxImage.alt = nextImg.alt || 'Dish Preview';
   }
   
   if (lightboxPrev) {
